@@ -42,8 +42,9 @@ public class TaskController {
                            @RequestParam(required = false) String title,
                            @RequestParam(required = false) String description,
                            @RequestParam(required = false) LocalDate dueDate,
-                           @RequestParam(required = false) LocalTime dueTime) {
-        return this.service.updateTask(id, title, description, dueDate, dueTime);
+                           @RequestParam(required = false) LocalTime dueTime,
+                           @RequestParam (required = false) String status) {
+        return this.service.updateTask(id, title, description, dueDate, dueTime, status);
     }
 
     //DELETE

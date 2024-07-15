@@ -17,7 +17,7 @@ public class TaskDTO {
     private LocalTime dueTime;
     private String status;
 
-    //everything constructor
+    //everything constructor - this constructs a TaskDTO from a task object
     public TaskDTO(Task task) {
         this.id = task.getId();
         this.title = task.getTitle();
