@@ -14,9 +14,9 @@ export default function Footer() {
             </div>
             <div className="footer-half right-footer">
                 <ul className="flex">
-                    <li><img src={teams} /></li>
-                    <li><a href="https://www.linkedin.com/in/suzy-brown-aa4764251/"><img src={linkedin} /></a></li>
-                    <li><a href="https://github.com/SuzyQ-2117" target="_blank" rel="noopener noreferrer"><img src={github} /></a></li>
+                    <li><img src={teams} alt=""/></li>
+                    <li><a href="https://www.linkedin.com/in/suzy-brown-aa4764251/"><img src={linkedin} alt=""/></a></li>
+                    <li><a href="https://github.com/SuzyQ-2117" target="_blank" rel="noopener noreferrer"><img src={github} alt=""/></a></li>
                 </ul>
             </div>
         </div>

@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   padding: 0 auto;
   margin: 0 auto;
   outline: red solid 0px;
-  font-family: Quicksand;
+  font-family: Raleway;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgb(239,239,239);
 }
 
 ul {
@@ -15,30 +22,27 @@ ul {
 
 .white-container {
   margin: 2vw;
+  padding: 0;
   max-width: 100vw;
   background-color: white;
   box-shadow: 1px 1px 10px 1px #d6cfcb;
 }
 
-.border-bottom{
+.border-bottom {
   max-width: 80em;
   margin-bottom: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid black;;
+  border-bottom: 1px solid black;
 }
 
 .sidebar {
   margin-left: 0;
   padding: 2em;
-  width: 25em;
-  max-width: 800px;
+  width: 30em;
   text-align: center;
-  background-color: #DDE2E1;
+  background-color: #FFC8DD;
 }
 
-.whole-box {
-  padding: 2em;
-}
 
 .intro-left {
   margin-right: 5em;
@@ -50,7 +54,7 @@ ul {
 
 .footer {
   padding: 2em;
-  background-color: #808A91;
+  background-color: #CDB4DB;
   color: #303E46;
   font-weight: bold;
   align-items: center;
@@ -65,7 +69,7 @@ ul {
 }
 
 .left-footer {
-  border-right: 1px solid #303E46;
+  border-right: 1px solid black;
 }
 
 .left-footer ul {
@@ -81,18 +85,20 @@ ul {
   display: flex;
 }
 
-.nav-link, li {
+.nav-link,
+li {
   list-style: none;
   list-style-position: inside;
 }
 
-.nav-link:visited, .nav-link:link {
-  color: #303E46;
+.nav-link:visited,
+.nav-link:link {
+  color: black;
 }
 
 .nav-link {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
   padding: 0.5em 0;
   position: relative;
@@ -102,7 +108,7 @@ ul {
 .nav-link::after {
   content: "";
   width: 0;
-  border-bottom: 1px solid #303E46;
+  border-bottom: 1px solid black;
   margin: 0 10px;
   transition: width 0.4s ease;
 }
@@ -112,11 +118,11 @@ ul {
 }
 
 .nav-link::before {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .nav-link::after {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .nav-link {
@@ -125,11 +131,109 @@ ul {
 
 .nav-link.active::before,
 .nav-link.active::after {
-  border-bottom: 2px solid #303E46;
-  width: 30px;
+  border-bottom: 2px solid;
+  width: 20px;
 }
 
 .nav-link:hover::before,
 .nav-link:hover::after {
-  width: 30px;
+  width: 20px;
+}
+
+.top-section {
+  background-color: white;
+  text-align: left;
+  padding: 30px 1em;
+}
+
+
+/* GRID VIEW FOR THE MAIN PAGE */
+.container {
+  margin: 0;
+  padding: 1em;
+  background-color: #EFF1FA;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 1em 1em;
+  grid-auto-flow: row;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-areas:
+    "top-left top-left top-right top-right"
+    "top-left top-left top-right top-right"
+    "top-left top-left top-right top-right"
+    "mid-far-left mid-left mid-right mid-far-right"
+    "bottom-left bottom-middle bottom-middle bottom-right"
+    "bottom-left bottom-middle bottom-middle bottom-right"
+    "bottom-left bottom-middle bottom-middle bottom-right";
+
+}
+
+* {
+  outline: 0px red solid;
+}
+
+.top-left {
+  grid-area: top-left;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.top-right {
+  grid-area: top-right;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.mid-far-left {
+  grid-area: mid-far-left;
+  background-color: #CDB4DB;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.mid-left {
+  grid-area: mid-left;
+  background-color: #FFC8DD;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.mid-right {
+  grid-area: mid-right;
+  background-color: #BDE0FE;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.mid-far-right {
+  grid-area: mid-far-right;
+  background-color: #A2D2FF;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.bottom-left {
+  grid-area: bottom-left;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.bottom-middle {
+  grid-area: bottom-middle;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.bottom-right {
+  grid-area: bottom-right;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
 }
