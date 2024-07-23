@@ -8,12 +8,15 @@ import ToDoPage from './pages/ToDoPage';
 
 function App() {
   return (
-    <div>
+    <div className="top-level">
       <div className="white-container">
         <div className="flex">
-          <BrowserRouter> 
+          <BrowserRouter>
             <Navbar />
             <div className="whole-box">
+              <div className="top-section">
+                <h2>Coach to Code 2024</h2>
+              </div>
               <Routes>
                 <Route path='/' element={<HomePage />} />
                 <Route path='/about' element={<About />} />
