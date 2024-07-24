@@ -1,6 +1,6 @@
 export default function Intro() {
     return (
-        <div className="container">
+        <div className="container coloured-background">
 
 
             <div className="top-far-left">

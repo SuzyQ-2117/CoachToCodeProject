@@ -23,7 +23,7 @@ export default function ToDoPage() {
     // will need to perform a fetch request here to retrieve the details of all tasks held in the database and will then need to deconstruct them and parse the data into the ToDoCard
 
     return (
-        <div>
+        <div className="coloured-background">
             <h3>This is a heading about the tasks on this page!</h3>
             <br />
             <p>This is the section where my fancy To Do app will be displayed</p>
