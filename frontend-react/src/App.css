@@ -247,3 +247,10 @@ li {
 .top-far-left:hover, .top-left:hover, .top-right:hover, .top-far-right:hover, .mid-left:hover, .mid-right:hover, .bottom-left:hover, .bottom-middle:hover, .bottom-right:hover{
   box-shadow: 1px 1px 10px 1px #d6cfcb;
 }
+
+.todo-card {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 1em;
+  padding: 10px;
+}
