@@ -39,7 +39,8 @@ ul {
   margin-left: 0;
   margin-right: 0;
   padding: 2em;
-  width: 170px;
+  min-width: 170px;
+  max-width: 170px;
   text-align: center;
   background-color: #CDB4DB;
 }
@@ -156,12 +157,14 @@ li {
   margin: 0;
 }
 
+.coloured-background {
+  background-color: #EFF1FA;
+}
 
 /* GRID VIEW FOR THE MAIN PAGE  */
 .container { 
   margin: 0;
   padding: 1em;
-  background-color: #EFF1FA;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -244,7 +247,15 @@ li {
   padding: 10px;
 }
 
-.top-far-left:hover, .top-left:hover, .top-right:hover, .top-far-right:hover, .mid-left:hover, .mid-right:hover, .bottom-left:hover, .bottom-middle:hover, .bottom-right:hover{
+.top-far-left:hover,
+.top-left:hover,
+.top-right:hover,
+.top-far-right:hover,
+.mid-left:hover,
+.mid-right:hover,
+.bottom-left:hover,
+.bottom-middle:hover,
+.bottom-right:hover {
   box-shadow: 1px 1px 10px 1px #d6cfcb;
 }
 
