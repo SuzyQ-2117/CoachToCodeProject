@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { url } from './url';
 
 
-function AddToDoModal({ setShow, show, fetchData }) {
+function AddToDoModal({ setShowAdd, showAdd, fetchData }) {
 
     const [title, setTitle] = useState();
     const [description, setDescription] = useState();
@@ -11,7 +11,7 @@ function AddToDoModal({ setShow, show, fetchData }) {
     const [dueTime, setDueTime] = useState();
     const [status, setStatus] = useState("Not Started");
 
-    const handleClose = () => setShow(false);
+    const handleCloseAddModal = () => setShowAdd(false);
     
     // will need a handle submit function to post the data to the database
 
@@ -38,7 +38,7 @@ function AddToDoModal({ setShow, show, fetchData }) {
             setDueDate("");
             setDueTime("");
             fetchData();
-            handleClose();
+            handleCloseAddModal();
         })
     }
 
@@ -48,7 +48,7 @@ function AddToDoModal({ setShow, show, fetchData }) {
         <div>
 
 
-            <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} >
+            <Modal show={showAdd} onHide={handleCloseAddModal} backdrop="static" keyboard={false} >
                 <Modal.Header>
                     <Modal.Title>Add New To-Do</Modal.Title>
                 </Modal.Header>
@@ -66,7 +66,7 @@ function AddToDoModal({ setShow, show, fetchData }) {
                     </form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <button variant="secondary" onClick={handleClose}>Cancel</button>
+                    <button variant="secondary" onClick={handleCloseAddModal}>Cancel</button>
                     <button variant="primary" onClick={handleSubmit}>Add To Do!</button>
                 </Modal.Footer>
             </Modal>
