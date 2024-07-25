@@ -10,7 +10,7 @@
 }
 
 body {
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
   background-color: #EFF1FA;
 }
@@ -36,13 +36,11 @@ ul {
 }
 
 .sidebar {
-  margin-left: 0;
-  margin-right: 0;
   padding: 2em;
-  min-width: 170px;
-  max-width: 170px;
+  width: 250px;
   text-align: center;
   background-color: #CDB4DB;
+  flex: none;
 }
 
 
@@ -148,6 +146,7 @@ li {
 }
 
 .top-section {
+  border-bottom: 1px dashed #CDB4DB;
   background-color: white;
   text-align: left;
   padding: 30px 1em;
@@ -155,14 +154,16 @@ li {
 
 .whole-box {
   margin: 0;
+  flex: 1;
 }
 
 .coloured-background {
   background-color: #EFF1FA;
+  padding: 1em;
 }
 
 /* GRID VIEW FOR THE MAIN PAGE  */
-.container { 
+.container {
   margin: 0;
   padding: 1em;
   display: grid;
@@ -173,14 +174,14 @@ li {
   grid-auto-flow: row;
   justify-items: stretch;
   align-items: stretch;
-  grid-template-areas: 
+  grid-template-areas:
     "top-far-left top-left top-right top-far-right"
     "mid-left mid-left mid-right mid-right"
     "mid-left mid-left mid-right mid-right"
     "mid-left mid-left mid-right mid-right"
     "bottom-left bottom-middle bottom-middle bottom-right"
     "bottom-left bottom-middle bottom-middle bottom-right"
-    "bottom-left bottom-middle bottom-middle bottom-right"; 
+    "bottom-left bottom-middle bottom-middle bottom-right";
 }
 
 .top-far-left {
@@ -260,8 +261,231 @@ li {
 }
 
 .todo-card {
+  background-color: white;
   border: 1px solid black;
   border-radius: 10px;
   margin: 1em;
   padding: 10px;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
+
+.todo-headings {
+  padding: 1em;
+}
+
+.color1 {
+  border: #FFAFCC 1px dashed;
+}
+
+.color1 h4 {
+  padding: 0;
+  border-bottom: #FFAFCC 2px solid;
+}
+
+.color1 button {
+  border: #FFAFCC 1px dashed;
+  border-radius: 4px;
+}
+
+.color2 {
+  border: #BDE0FE	 1px dashed;
+}
+
+.color2 h4 {
+  padding: 0;
+  border-bottom: #BDE0FE	 2px solid;
+}
+
+.color2 button {
+  border: #BDE0FE	 1px dashed;
+  border-radius: 4px;
+}
+
+.color3 {
+  border: #FFC8DD 1px dashed;
+}
+
+.color3 h4 {
+  padding: 0;
+  border-bottom: #FFC8DD 2px solid;
+}
+
+.color3 button {
+  border: #FFC8DD 1px dashed;
+  border-radius: 4px;
+}
+
+.color4 {
+  border: #A2D2FF 1px dashed;
+}
+
+.color4 h4 {
+  padding: 0;
+  border-bottom: #A2D2FF 2px solid;
+}
+
+.color4 button {
+  border: #A2D2FF 1px dashed;
+  border-radius: 4px;
+}
+
+.color5 {
+  border: #CDB4DB 1px dashed;
+}
+
+.color5 h4 {
+  padding: 0;
+  border-bottom: #CDB4DB 2px solid;
+}
+
+.color5 button, .add-btn {
+  border: #CDB4DB 1px dashed;
+  border-radius: 4px;
+}
+
+.complete {
+  border: #b4d7ae 1px dashed;
+  background-color: rgba(180, 215, 174, 0.2);
+}
+
+.complete h4 {
+  padding: 0;
+  border-bottom: #b4d7ae 2px solid;
+}
+
+.complete button {
+  border: #b4d7ae 1px dashed;
+  border-radius: 4px;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.todo-container {  
+  display: grid;
+  max-width: 450px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  grid-auto-columns: 1fr;
+  gap: 0em 0em;
+  grid-auto-flow: row;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-areas:
+    "todo-title todo-title todo-status"
+    "todo-description todo-description todo-datetime"
+    "todo-edit-btn todo-complete-btn todo-delete-btn";
+}
+
+.todo-title {
+  margin: 0;
+  justify-self: start;
+  align-self: start;
+  grid-area: todo-title;
+}
+
+.todo-description {
+  margin: 0;
+  justify-self: start;
+  align-self: start;
+  grid-area: todo-description;
+}
+
+.todo-datetime {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "todo-date"
+    "todo-time";
+  grid-area: todo-datetime;
+}
+
+.todo-date {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "todo-date-heading"
+    "todo-date-value";
+  grid-area: todo-date;
+}
+
+.todo-date-heading {
+  grid-area: todo-date-heading;
+}
+
+.todo-date-value {
+  grid-area: todo-date-value;
+}
+
+.todo-time {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "todo-time-heading"
+    "todo-time-value";
+  grid-area: todo-time;
+}
+
+.todo-time-heading {
+  grid-area: todo-time-heading;
+}
+
+.todo-time-value {
+  grid-area: todo-time-value;
+}
+
+.todo-edit-btn {
+  justify-self: center;
+  align-self: center;
+  grid-area: todo-edit-btn;
+}
+
+.todo-delete-btn {
+  justify-self: center;
+  align-self: center;
+  grid-area: todo-delete-btn;
+}
+
+.todo-complete-btn {
+  justify-self: center;
+  align-self: center;
+  grid-area: todo-complete-btn;
+}
+
+.todo-status {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "todo-status-area"
+    ".";
+  grid-area: todo-status;
+}
+
+.todo-status-area {
+  grid-area: todo-status-area;
+  text-align: center;
 }
