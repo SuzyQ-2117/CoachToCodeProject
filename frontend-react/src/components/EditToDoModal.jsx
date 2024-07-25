@@ -1,42 +1,131 @@
+import { useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import { url } from './url';
 
+function EditToDoModal({
+  showEdit,
+  setShowEdit,
+  fetchData,
+  updatedId,
+  updatedTitle,
+  setUpdatedTitle,
+  updatedDescription,
+  setUpdatedDescription,
+  updatedDueDate,
+  setUpdatedDueDate,
+  updatedDueTime,
+  setUpdatedDueTime,
+  updatedStatus,
+  setUpdatedStatus
+}) {
 
-function EditToDoModal() {
-  const [show, setShow] = useState(false);
+  useEffect(() => {
+    if (showEdit) {
+      console.log("Updated Status:", updatedStatus);
+    }
+  }, [showEdit, updatedStatus]);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-// will need a handle submit function to post the data to the database
-
-  const handleSubmit = () => {
-// All your handleSubmit logic needs to go here. Are you going to check that the same task already exists? Probably not
-// all you'll really need to do in this function is package the fields into a variable, perform your fetch request, clear your inputs from the form, call the handleClose function and perform the re-render. Maybe useEffect on the ToDoPage and watch for setShow being changed to false? something like that 
+  function handleCloseEditModal() {
+    setShowEdit(false);
+    // Reset state values
+    setUpdatedTitle('');
+    setUpdatedDescription('');
+    setUpdatedDueDate('');
+    setUpdatedDueTime('');
+    setUpdatedStatus('Not Started');
   }
 
-// will also need a way to cause the main ToDoPage to re-render when a new ToDo is added
+  const handleEditToDo = (e) => {
+    e.preventDefault();
+
+    const updateParams = {
+      title: updatedTitle,
+      description: updatedDescription,
+      dueDate: updatedDueDate,
+      status: updatedStatus
+    };
+
+    if (updatedDueTime) {
+      updateParams.dueTime = updatedDueTime;
+    }
+
+    const queryParams = new URLSearchParams(updateParams).toString();
+
+    console.log("Updating ToDo with Params:", updateParams);
+
+    fetch(`${url}/task/update/${updatedId}?${queryParams}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then(response => {
+        if (response.ok) {
+          alert("ToDo updated!");
+          handleCloseEditModal(); // Close modal on success
+          fetchData(); // Fetch updated data after success
+        } else {
+          return response.text().then(text => { throw new Error(text) });
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
+      });
+  }
 
   return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
-      </Button>
-
-      <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} >
-        <Modal.Header closeButton>
-          <Modal.Title>Add New To-Do</Modal.Title>
-        </Modal.Header>
+    <Modal show={showEdit} onHide={handleCloseEditModal} backdrop="static" keyboard={false}>
+      <Modal.Header closeButton>
+        <Modal.Title>Edit To-Do</Modal.Title>
+      </Modal.Header>
+      <form onSubmit={handleEditToDo}>
         <Modal.Body>
-          {/* This is where my form needs to go for all the ToDo components */}
+          <div>
+            <label>Title: </label>
+            <input type="text" required value={updatedTitle || ''} onChange={(e) => setUpdatedTitle(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Description: </label>
+            <input type="text" required value={updatedDescription || ''} onChange={(e) => setUpdatedDescription(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Date: </label>
+            <input
+              type="date"
+              required
+              value={updatedDueDate || ''}
+              onChange={(e) => setUpdatedDueDate(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Time (optional): </label>
+            <input
+              type="time"
+              value={updatedDueTime || ''}
+              onChange={(e) => setUpdatedDueTime(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Status: </label>
+            <select
+              required
+              value={updatedStatus || 'Not Started'}
+              onChange={(e) => setUpdatedStatus(e.target.value)}
+            >
+              <option value="Not Started">Not Started</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Complete">Complete!</option>
+            </select>
+          </div>
         </Modal.Body>
         <Modal.Footer>
-          <button variant="secondary" onClick={handleClose}>Cancel</button>
-          <button variant="primary" onClick={handleSubmit}>Add</button>
+          <Button type="submit">Save</Button>
+          <Button variant="secondary" onClick={handleCloseEditModal}>Cancel</Button>
         </Modal.Footer>
-      </Modal>
-    </>
+      </form>
+    </Modal>
   );
 }
 
