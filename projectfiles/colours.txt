@@ -1,0 +1,7 @@
+color 1: #FFAFCC	Carnation Pink
+color 2: #FFC8DD	Fairy Tale
+color 3: #CDB4DB	Thistle
+color 4: #BDE0FE	Uranian Blue
+color 5: #A2D2FF	Light Sky Blue
+color 6: #EFF1FA	Ghost White
+color 7: #B4D7AE    Celadon
