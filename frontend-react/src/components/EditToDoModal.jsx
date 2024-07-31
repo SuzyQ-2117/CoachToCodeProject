@@ -3,6 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { url } from './url';
 
+
+//This function is now defunct and has been removed - relied on the Bootstrap for Modals but I don't want the whole Bootstrap package as that overrides the custom CSS I've added. Have left this in to show logic but if this were a real product I was producing, I would remove this component altogether. 
 function EditToDoModal({
   showEdit,
   setShowEdit,

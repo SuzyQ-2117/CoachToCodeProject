@@ -1,6 +1,6 @@
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
-import { url } from './url';
+import { url } from '../url';
 
 
 function AddToDoModal({ setShowAdd, showAdd, fetchData }) {
