@@ -168,20 +168,32 @@ li {
   padding: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr 2fr;
   grid-auto-columns: 1fr;
   gap: 2em 2em;
   grid-auto-flow: row;
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas:
+    "top-line top-line top-line top-line"
     "top-far-left top-left top-right top-far-right"
-    "mid-left mid-left mid-right mid-right"
-    "mid-left mid-left mid-right mid-right"
-    "mid-left mid-left mid-right mid-right"
-    "bottom-left bottom-middle bottom-middle bottom-right"
-    "bottom-left bottom-middle bottom-middle bottom-right"
-    "bottom-left bottom-middle bottom-middle bottom-right";
+    "mid-line mid-line mid-line mid-line"
+    "bottom-left bottom-mid bottom-mid bottom-right";
+}
+
+.container img {
+  max-width: 100%;
+}
+
+.storm {
+  border-radius: 5px;
+}
+
+.top-line {
+  grid-area: top-line;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .top-far-left {
@@ -189,6 +201,7 @@ li {
   background-color: #A2D2FF;
   border-radius: 10px;
   padding: 10px;
+  max-width: 220px;
 }
 
 .top-left {
@@ -196,6 +209,7 @@ li {
   background-color: #BDE0FE;
   border-radius: 10px;
   padding: 10px;
+  max-width: 220px;
 }
 
 .top-right {
@@ -203,6 +217,7 @@ li {
   background-color: #FFC8DD;
   border-radius: 10px;
   padding: 10px;
+  max-width: 220px;
 }
 
 .top-far-right {
@@ -210,22 +225,16 @@ li {
   background-color: #FFAFCC;
   border-radius: 10px;
   padding: 10px;
+  max-width: 220px;
 }
 
-.mid-left {
-  grid-area: mid-left;
+
+.mid-line {
+  grid-area: mid-line;
   background-color: white;
   border-radius: 10px;
   padding: 10px;
 }
-
-.mid-right {
-  grid-area: mid-right;
-  background-color: white;
-  border-radius: 10px;
-  padding: 10px;
-}
-
 
 .bottom-left {
   grid-area: bottom-left;
@@ -234,8 +243,8 @@ li {
   padding: 10px;
 }
 
-.bottom-middle {
-  grid-area: bottom-middle;
+.bottom-mid {
+  grid-area: bottom-mid;
   background-color: white;
   border-radius: 10px;
   padding: 10px;
@@ -259,6 +268,14 @@ li {
 .bottom-right:hover {
   box-shadow: 1px 1px 10px 1px #d6cfcb;
 }
+
+
+
+
+
+
+
+
 
 .todo-card {
   background-color: white;
@@ -299,16 +316,16 @@ li {
 }
 
 .color2 {
-  border: #BDE0FE	 1px dashed;
+  border: #BDE0FE 1px dashed;
 }
 
 .color2 h4 {
   padding: 0;
-  border-bottom: #BDE0FE	 2px solid;
+  border-bottom: #BDE0FE 2px solid;
 }
 
 .color2 button {
-  border: #BDE0FE	 1px dashed;
+  border: #BDE0FE 1px dashed;
   border-radius: 4px;
 }
 
@@ -349,7 +366,8 @@ li {
   border-bottom: #CDB4DB 2px solid;
 }
 
-.color5 button, .add-btn {
+.color5 button,
+.add-btn {
   border: #CDB4DB 1px dashed;
   border-radius: 4px;
 }
@@ -373,7 +391,7 @@ li {
   justify-content: space-around;
 }
 
-.todo-container {  
+.todo-container {
   display: grid;
   max-width: 450px;
   grid-template-columns: 1fr 1fr 1fr;
