@@ -168,7 +168,7 @@ li {
   padding: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr 0.5fr 2fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 2fr;
   grid-auto-columns: 1fr;
   gap: 2em 2em;
   grid-auto-flow: row;
@@ -277,12 +277,14 @@ li {
 
 
 
-.todo-card {
+.todo-card, .add-todo-form {
   background-color: white;
   border: 1px solid black;
   border-radius: 10px;
   margin: 1em;
   padding: 10px;
+  perspective: 1000px;
+  max-width: 450px;
 }
 
 .flex-wrap {
@@ -390,6 +392,16 @@ li {
 .space-around {
   justify-content: space-around;
 }
+
+
+
+
+
+
+
+
+
+
 
 .todo-container {
   display: grid;
@@ -507,3 +519,18 @@ li {
   grid-area: todo-status-area;
   text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

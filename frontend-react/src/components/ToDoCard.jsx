@@ -118,9 +118,9 @@ const ToDoCard = ({ id, title, description, dueDate, dueTime, status, fetchData,
                             <div className="todo-status-area flex">
                                 <p>Status:</p>
                                 <select value={editStatus} onChange={(e) => setEditStatus(e.target.value)}>
+                                    {/* Made the decision to remove Complete from this list. Can't think of a use-case where the user will need to edit the date, title or description at the same time as marking the ToDo as Complete and having this option in the drop-down seems confusing. Why would I have a dedicated button for marking a ToDo as complete and alsoo have that as part of the edit function? */}
                                     <option>Not Started</option>
                                     <option>In Progress</option>
-                                    <option>Complete</option>
                                 </select>
                             </div>
                         </div>
