@@ -15,9 +15,9 @@ export default function Navbar() {
                 <li>
                     <NavLink to='/' className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Home</NavLink>
                 </li>
-                <li>
+                {/* <li>
                     <NavLink to='/about' className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>About Me</NavLink>
-                </li>
+                </li> */}
                 <li>
                     <NavLink to='/todo' className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>To-Do App</NavLink>
                 </li>
