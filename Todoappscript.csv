@@ -1,0 +1,12 @@
+due_date,due_time,id,description,status,title
+2024-07-27,22:13:00.000000,5,"This is a test task that I am only entering so that I can see the eventual layout","In Progress","Test Task Two"
+2024-07-03,22:10:00.000000,7,"This card has been assigned a colour and I'm just checking it doesn't change when I save the edit","In Progress","Editing Test"
+2024-07-27,NULL,9,"This is just another test task so that I can make sure everything works",Complete,"Test Task"
+2024-07-31,NULL,10,"Just testing whether a new task will automatically be assigned a random colour","In Progress","Colour test"
+2024-07-31,NULL,13,"Add the transformation to the ToDoCards when going into "Edit Mode"","In Progress","Edit Animations"
+2024-07-31,NULL,14,"Add the transformation to make the div slide into view when adding a new ToDo","In Progress","Add Animation"
+2024-07-31,NULL,15,"Finish adding the placeholder text on the Intro component",Complete,"Complete Placeholder Text"
+2024-07-31,NULL,16,"Add logic to prevent the user from selecting a due date in the past when adding a new ToDo",Complete,"Previous date!"
+2024-07-31,NULL,17,"Go through which files are in use and remove the ones that aren't displayed anywhere",Complete,"Remove unused media files"
+2024-07-31,NULL,18,"Destroy & Re-create tables and populate with test data","In Progress","Update database"
+2024-07-31,NULL,22,"Demo - Edit works!",Complete,"New demo task!"
